@@ -1,9 +1,11 @@
+type TodolistItemType = {
+    title: string
+}
 
-
-export const TodolistItem = () => {
+export const TodolistItem = ({title}: TodolistItemType) => {
     return (
         <div>
-            <h3>What to learn</h3>
+            <h3>{title}</h3>
             <div>
                 <input/>
                 <button>+</button>
