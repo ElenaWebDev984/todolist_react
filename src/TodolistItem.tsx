@@ -17,7 +17,7 @@ export const TodolistItem = ({title, tasks, date}: TodolistItemType) => {
             <ul>
                 {tasks.map(task => {
                     return (
-                        <li>
+                        <li key={task.id}>
                             <input type="checkbox" checked={task.isDone}/>
                             <span>{task.title}</span>
                         </li>
