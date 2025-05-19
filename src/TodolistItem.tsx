@@ -15,15 +15,14 @@ export const TodolistItem = ({title, tasks, date}: TodolistItemType) => {
                 <button>+</button>
             </div>
             <ul>
-                <li>
-                    <input type="checkbox" checked={tasks[0].isDone}/> <span>HTML&CSS</span>
-                </li>
-                <li>
-                    <input type="checkbox" checked={true}/> <span>JS</span>
-                </li>
-                <li>
-                    <input type="checkbox" checked={false}/> <span>React</span>
-                </li>
+                {tasks.map(task => {
+                    return (
+                        <li>
+                            <input type="checkbox" checked={task.isDone}/>
+                            <span>{task.title}</span>
+                        </li>
+                    )
+                })}
             </ul>
             <div>
                 <button>All</button>
