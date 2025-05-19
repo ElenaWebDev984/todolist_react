@@ -1,8 +1,12 @@
+import {Task} from './App.tsx'
+
 type TodolistItemType = {
     title: string
+    tasks: Task[]
+    date?: string
 }
 
-export const TodolistItem = ({title}: TodolistItemType) => {
+export const TodolistItem = ({title, tasks, date}: TodolistItemType) => {
     return (
         <div>
             <h3>{title}</h3>
@@ -12,7 +16,7 @@ export const TodolistItem = ({title}: TodolistItemType) => {
             </div>
             <ul>
                 <li>
-                    <input type="checkbox" checked={true}/> <span>HTML&CSS</span>
+                    <input type="checkbox" checked={tasks[0].isDone}/> <span>HTML&CSS</span>
                 </li>
                 <li>
                     <input type="checkbox" checked={true}/> <span>JS</span>
@@ -26,6 +30,8 @@ export const TodolistItem = ({title}: TodolistItemType) => {
                 <button>Active</button>
                 <button>Completed</button>
             </div>
+            <hr/>
+            <div>{date}</div>
         </div>
     );
 };
