@@ -24,7 +24,11 @@ export const TodolistItem = ({title, tasks, deleteTask, changeFilter, createTask
             <div>
                 <input value={taskTitle}
                        onChange={event => setTaskTitle(event.currentTarget.value)}
-                onKeyDown={event => console.log(event.key)}/>
+                       onKeyDown={event => {
+                           if (event.key === 'Enter') {
+                               createTask(taskTitle)
+                           }
+                       }}/>
                 <Button title='+'
                         onClick={createTaskHandler}/>
             </div>
@@ -36,8 +40,8 @@ export const TodolistItem = ({title, tasks, deleteTask, changeFilter, createTask
                                 <li key={task.id}>
                                     <input type="checkbox" checked={task.isDone}/>
                                     <span>{task.title}</span>
-                                   <Button title='x'
-                                           onClick={() => deleteTask(task.id)}/>
+                                    <Button title='x'
+                                            onClick={() => deleteTask(task.id)}/>
                                 </li>
                             )
                         })}
