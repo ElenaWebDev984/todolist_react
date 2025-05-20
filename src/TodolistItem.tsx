@@ -1,6 +1,6 @@
 import {filterValues, Task} from './App.tsx'
 import {Button} from "./Button.tsx";
-import {useRef} from "react";
+import {useRef, useState} from "react";
 
 type TodolistItemType = {
     title: string
@@ -11,19 +11,14 @@ type TodolistItemType = {
 }
 
 export const TodolistItem = ({title, tasks, deleteTask, changeFilter, createTask}: TodolistItemType) => {
-    const inputRef = useRef<HTMLInputElement>(null)  // TODO inputRef
+    const [taskTitle, setTaskTitle] = useState('')
 
     return (
         <div>
             <h3>{title}</h3>
             <div>
-                <input ref={inputRef}/>
-                <Button title='+' onClick={() => {
-                    if(inputRef.current) {
-                        createTask(inputRef.current.value)
-                        inputRef.current.value = ''
-                    }
-                }}/>
+                <input value={taskTitle}/>
+                <Button title='+' onClick={() => {}}/>
             </div>
             {tasks.length === 0 ? <p>There ara no tasks here</p>
                 : (
