@@ -18,7 +18,11 @@ export const TodolistItem = ({title, tasks, deleteTask, changeFilter, createTask
             <h3>{title}</h3>
             <div>
                 <input value={taskTitle} onChange={event => setTaskTitle(event.currentTarget.value)}/>
-                <Button title='+' onClick={() => createTask(taskTitle)}/>
+                <Button title='+'
+                        onClick={() => {
+                            createTask(taskTitle)
+                            setTaskTitle('')
+                        }}/>
             </div>
             {tasks.length === 0 ? <p>There ara no tasks here</p>
                 : (
@@ -28,7 +32,8 @@ export const TodolistItem = ({title, tasks, deleteTask, changeFilter, createTask
                                 <li key={task.id}>
                                     <input type="checkbox" checked={task.isDone}/>
                                     <span>{task.title}</span>
-                                   <Button title='x' onClick={() => deleteTask(task.id)}/>
+                                   <Button title='x'
+                                           onClick={() => deleteTask(task.id)}/>
                                 </li>
                             )
                         })}
