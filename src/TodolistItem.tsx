@@ -30,7 +30,6 @@ export const TodolistItem = ({title, tasks, deleteTask, changeFilter, createTask
 
 
 
-
     return (
         <div>
             <h3>{title}</h3>
@@ -45,12 +44,13 @@ export const TodolistItem = ({title, tasks, deleteTask, changeFilter, createTask
                 : (
                     <ul>
                         {tasks.map(task => {
+                            const deleteTaskHandler = () =>deleteTask(task.id)
                             return (
                                 <li key={task.id}>
                                     <input type="checkbox" checked={task.isDone}/>
                                     <span>{task.title}</span>
                                     <Button title='x'
-                                            onClick={() => deleteTask(task.id)}/>
+                                            onClick={deleteTaskHandler}/>
                                 </li>
                             )
                         })}
