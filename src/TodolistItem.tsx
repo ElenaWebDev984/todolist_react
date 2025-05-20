@@ -4,7 +4,7 @@ import {Button} from "./Button.tsx";
 type TodolistItemType = {
     title: string
     tasks: Task[]
-    deleteTask: (taskId: number) => void
+    deleteTask: (taskId: string) => void
     changeFilter: (filter: filterValues) => void
 }
 
