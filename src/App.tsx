@@ -44,7 +44,9 @@ export const App = () => {
     }
 
     const createTask = () => {
-        alert('Creation of the new task')
+        const newTask = {id: v1(), title: 'New task', isDone: false}
+        const newTasks = [newTask, ...tasks]
+        setTasks(newTasks)
     }
 
 
