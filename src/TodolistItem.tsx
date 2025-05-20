@@ -7,7 +7,7 @@ type TodolistItemType = {
     deleteTask: (taskId: number) => void
 }
 
-export const TodolistItem = ({title, tasks, date, deleteTask}: TodolistItemType) => {
+export const TodolistItem = ({title, tasks, deleteTask}: TodolistItemType) => {
     return (
         <div>
             <h3>{title}</h3>
@@ -35,7 +35,6 @@ export const TodolistItem = ({title, tasks, date, deleteTask}: TodolistItemType)
                 <Button title='Completed'/>
             </div>
             <hr/>
-            <div>{date}</div>
         </div>
     );
 };
