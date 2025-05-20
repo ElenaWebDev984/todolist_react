@@ -43,8 +43,9 @@ export const App = () => {
         setFilter(filter)
     }
 
-
-
+    const createTask = () => {
+        alert('Creation of the new task')
+    }
 
 
     return (
@@ -52,7 +53,8 @@ export const App = () => {
             <TodolistItem title='What to lean'
                           tasks={filteredTasks}
                           deleteTask={deleteTask}
-                          changeFilter={changeFilter}/>
+                          changeFilter={changeFilter}
+                          createTask={createTask}/>
         </div>
     )
 }
