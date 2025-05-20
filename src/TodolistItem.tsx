@@ -11,7 +11,7 @@ type TodolistItemType = {
 }
 
 export const TodolistItem = ({title, tasks, deleteTask, changeFilter, createTask}: TodolistItemType) => {
-    const inputRef = useRef<HTMLInputElement>(null)
+    const inputRef = useRef<HTMLInputElement>(null)  // TODO inputRef
 
     return (
         <div>
