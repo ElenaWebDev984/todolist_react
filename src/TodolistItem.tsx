@@ -23,6 +23,7 @@ export const TodolistItem = ({title, tasks, date}: TodolistItemType) => {
                                 <li key={task.id}>
                                     <input type="checkbox" checked={task.isDone}/>
                                     <span>{task.title}</span>
+                                    <Button title='x'/>
                                 </li>
                             )
                         })}
