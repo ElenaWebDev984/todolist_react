@@ -13,7 +13,7 @@ export const TodolistItem = ({title, tasks, deleteTask}: TodolistItemType) => {
             <h3>{title}</h3>
             <div>
                 <input/>
-                <Button title='+'/>
+                <Button title='+' onClick={() => {}}/>
             </div>
             {tasks.length === 0 ? <p>There ara no tasks here</p>
                 : (
@@ -30,9 +30,9 @@ export const TodolistItem = ({title, tasks, deleteTask}: TodolistItemType) => {
                     </ul>
                 )}
             <div>
-                <Button title='All'/>
-                <Button title='Active'/>
-                <Button title='Completed'/>
+                <Button title='All' onClick={() => {}}/>
+                <Button title='Active' onClick={() => {}}/>
+                <Button title='Completed' onClick={() => {}}/>
             </div>
             <hr/>
         </div>
