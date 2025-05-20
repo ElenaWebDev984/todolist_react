@@ -13,16 +13,18 @@ type TodolistItemType = {
 export const TodolistItem = ({title, tasks, deleteTask, changeFilter, createTask}: TodolistItemType) => {
     const [taskTitle, setTaskTitle] = useState('')
 
+    const createTaskHandler = () => {
+        createTask(taskTitle)
+        setTaskTitle('')
+    }
+
     return (
         <div>
             <h3>{title}</h3>
             <div>
                 <input value={taskTitle} onChange={event => setTaskTitle(event.currentTarget.value)}/>
                 <Button title='+'
-                        onClick={() => {
-                            createTask(taskTitle)
-                            setTaskTitle('')
-                        }}/>
+                        onClick={createTaskHandler}/>
             </div>
             {tasks.length === 0 ? <p>There ara no tasks here</p>
                 : (
