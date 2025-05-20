@@ -22,7 +22,9 @@ export const TodolistItem = ({title, tasks, deleteTask, changeFilter, createTask
         <div>
             <h3>{title}</h3>
             <div>
-                <input value={taskTitle} onChange={event => setTaskTitle(event.currentTarget.value)}/>
+                <input value={taskTitle}
+                       onChange={event => setTaskTitle(event.currentTarget.value)}
+                onKeyDown={event => console.log(event.key)}/>
                 <Button title='+'
                         onClick={createTaskHandler}/>
             </div>
@@ -46,7 +48,6 @@ export const TodolistItem = ({title, tasks, deleteTask, changeFilter, createTask
                 <Button title='Active' onClick={() => changeFilter('active')}/>
                 <Button title='Completed' onClick={() => changeFilter('completed')}/>
             </div>
-            <hr/>
         </div>
     );
 };
