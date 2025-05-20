@@ -8,9 +8,11 @@ export type Task = {
     isDone: boolean
 }
 
+export type filterValues = 'all' | 'active' | 'completed'
+
 
 export const App = () => {
-    const [filter, setFilter] = useState('all');
+    const [filter, setFilter] = useState<filterValues>('all');
 
     const [tasks, setTasks] = useState<Task[]>([
         {id: 1, title: 'HTML&CSS', isDone: true},
