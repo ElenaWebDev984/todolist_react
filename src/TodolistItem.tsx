@@ -1,6 +1,6 @@
 import {filterValues, Task} from './App.tsx'
 import {Button} from "./Button.tsx";
-import {useState} from "react";
+import {ChangeEvent, useState} from "react";
 
 type TodolistItemType = {
     title: string
@@ -18,12 +18,17 @@ export const TodolistItem = ({title, tasks, deleteTask, changeFilter, createTask
         setTaskTitle('')
     }
 
+    const changeTaskTitleHandler = (event: ChangeEvent<HTMLInputElement>) => {
+        setTaskTitle(event.currentTarget.value)
+    }
+
+
     return (
         <div>
             <h3>{title}</h3>
             <div>
                 <input value={taskTitle}
-                       onChange={event => setTaskTitle(event.currentTarget.value)}
+                       onChange={changeTaskTitleHandler}
                        onKeyDown={event => {
                            if (event.key === 'Enter') {
                                createTask(taskTitle)
